@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="search">
+  <h1>Search Results for "{{ query }}"</h1>
+  {% if results %}
+    <ul class="search">
+      {% for restaurant in results %}
+          <h2 style="text-align: center;">{{ restaurant.location }} - {{ restaurant.name }}</h2>
+          <img src="{{ restaurant.url }}" alt="{{ restaurant.location }} {{ restaurant.name }}" class="center" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; width: 30%; height: auto;">
+          <p style="border-width: 3px; border-style: solid; border-color: #54010B; padding: 1em; text-align: center; margin-bottom: 10px;">Pricing: {{ restaurant.price }}</p>
+          <p style="border-width: 3px; border-style: solid; border-color: #54010B; padding: 1em; text-align: center; margin-bottom: 10px;">Review: {{ restaurant.review }}</p>
+          <p style="border-width: 3px; border-style: solid; border-color: #54010B; padding: 1em; text-align: center; margin-bottom: 10px;">Rating: {{ restaurant.rating }}</p>
+          <p style="border-width: 3px; border-style: solid; border-color: #54010B; padding: 1em; text-align: center; margin-bottom: 10px;">Mode of payment: {{ restaurant.payment_method }}</p>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Oh no! Key word not found! HUHU.</p>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="register">
+<h1 class="register">RECOMMEND YOUR FAV FOOD PLACE IN UPD HERE</h1>
+<form action="{{ url_for('processing') }}" method="post">
+    <label for="p_location">Location:</label>
+    <select name="location" id="p_location" required>
+        <option disabled selected value>...</option>
+        <option value="Area 2">Area 2</option>
+        <option value="Gyud Food">Gyud Food</option>
+        <option value="UPTC">UPTC</option>
+    </select><br><br>
+    <label for="p_name">Restaurant/Stall Name:</label>
+    <input type="text" name="location_name" id="p_name" required><br><br>
+    <label for="p_price">Pricing:</label>
+    <label for="p_price">Pricing:</label>
+    <select name="location_price" id="p_price" required>
+        <option disabled selected value>...</option>
+        <option value="Expensive">Expensive</option>
+        <option value="Average">Average</option>
+        <option value="Economical">Economical</option>
+        </select><br><br>
+    <label for="p_review">Share your experience here:</label>
+    <input type="text" name="location_review" id="p_review"><br><br>
+    <label for="p_rating">Rate your experience:</label>
+    <select name="location_rating" id="p_rating" required>
+        <option disabled selected value>...</option>
+        <option value="5">5</option>
+        <option value="4">4</option>
+        <option value="3">3</option>
+        <option value="2">2</option>
+        <option value="1">1</option>
+    </select><br><br>
+    <label for="p_payment_method">Modes of payment:</label>
+    <select name="payment_method" id="p_payment_method" required>
+        <option disabled selected value>...</option>
+        <option value="Cash">Cash</option>
+        <option value="GCash">GCash</option>
+        <option value="Both">Both</option>
+    </select><br><br>
+    <label for="p_url">Paste the image link here:</label>
+    <input type="url" name="location_url" id="p_url" placeholder="Remember to paste the image link address here"><br><br>
+    <input type="submit" value="Recommend!">
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="text-align:center; font-weight: bold;" class="restaurant"> {{ restaurant.name }} </h1>
+<img src="{{restaurant.url}}" class="center" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; width: 50%; height: auto;">
+<ul class="restaurant">
+	<li class="card" style="border-width: 3px; border-style: solid; border-color: #54010B; padding: 1em; text-align: center; margin-bottom: 10px;">
+	  <div class="title">Pricing</div>
+	  <div class="content">{{ restaurant.price }}</div>
+	</li>
+	<li class="card" style="border-width: 3px; border-style: solid; border-color: #54010B; padding: 1em; text-align: center; margin-bottom: 10px;">
+	  <div class="title">Review</div>
+	  <div class="content">{{ restaurant.review }}</div>
+	</li>
+	<li class="card" style="border-width: 3px; border-style: solid; border-color: #54010B; padding: 1em; text-align: center; margin-bottom: 10px;">
+	  <div class="title">Rating</div>
+	  <div class="content">{{ restaurant.rating }}</div>
+	</li>
+	<li class="card" style="border-width: 3px; border-style: solid; border-color: #54010B; padding: 1em; text-align: center; margin-bottom: 10px;">
+	  <div class="title">Mode of Payment</div>
+	  <div class="content">{{ restaurant.payment_method }}</div>
+	</li>
+  </ul>  
+  
+  <form class="restaurant" action="{{ url_for('modify') }}" method="post" style="text-align: center;">
+	<input type="hidden" name="restaurant_id" value="{{ restaurant.id }}">
+	<input type="submit" name="modify" value="EDIT" style="margin-right: 10px;">
+	<input type="submit" name="modify" value="DELETE">
+  </form>  
+
+{% endblock %}
